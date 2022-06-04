@@ -1,4 +1,5 @@
 import React from "react";
+import { act } from "react-dom/test-utils";
 import { httpGetDashboards } from "./api.http";
 import Bucket from "./Bucket";
 import Card from "./Card";
@@ -19,7 +20,6 @@ class Dashboard extends React.Component {
     let myDashboard = {};
     try {
       const resp = await httpGetDashboards();
-      console.log(resp.data);
       myDashboard = resp.data;
     } catch (err) {
       console.log(err);
@@ -32,25 +32,32 @@ class Dashboard extends React.Component {
     });
   }
 
-  componentDidUpdate() {
-    console.log("Sono aggiornato");
+  getMyContents(gigi) {
+    return gigi.contents.map((el) => {
+      return <Card descr={el.text} key={el.id} />;
+    });
   }
+
   render() {
-    console.log("Render");
-    const { myDashboard } = this.state;
-    console.log(myDashboard);
-    let appoggio;
-    if (myDashboard) {
-      appoggio = myDashboard.map((el) => {
-        return <Bucket title={el.name}></Bucket>;
+    const { myDashboard: dashboards } = this.state;
+
+    let actualDashboards;
+    if (dashboards) {
+      console.log(dashboards);
+      actualDashboards = dashboards.map((el) => {
+        return (
+          <Bucket title={el.name} key={el.id}>
+            {this.getMyContents(el)}
+          </Bucket>
+        );
       });
     } else {
-      appoggio = <h1>Cacca</h1>;
+      actualDashboards = <h1>Cacca</h1>;
     }
     return (
       <>
         <div style={{ padding: 50 }} className="dashboard">
-          {appoggio}
+          {actualDashboards}
         </div>
       </>
     );

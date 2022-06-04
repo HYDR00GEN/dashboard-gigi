@@ -1,6 +1,6 @@
 ## 1 : get delle Dashboard
 
-### alzare il server dell'es precedente. Modificare la chiamata affinche non serva un utente specifico ma solo e soltanto il contenuto per creare una dashboard( utilizzando id dashboad). Fare questo non appena il componente è visibile sulla schermata
+### alzare il server dell'es precedente. Modificare la chiamata affinche non serva un utente specifico ma solo e soltanto il contenuto per creare una dashboard( utilizzando id dashboad). Fare questo non appena il componente è visibile sulla schermata ( componentDidMount )
 
 ## 2 : salvare il risultato della chiamata
 

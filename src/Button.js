@@ -14,7 +14,4 @@ class Button extends React.Component {
     );
   }
 }
-Button.propTypes = {
-  onClickHandler: PropTypes.func,
-};
 export default Button;
