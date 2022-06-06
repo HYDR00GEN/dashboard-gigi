@@ -6,6 +6,6 @@ export const httpCreateCard = (data) => {
 };
 
 export const httpGetDashboards = () => {
-  const url = "http://localhost:1000/app/dashboards";
+  const url = "http://localhost:8000/app/dashboards";
   return axios.get(url);
 };

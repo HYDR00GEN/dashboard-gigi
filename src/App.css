@@ -2,6 +2,12 @@ body {
   user-select: none;
 }
 
+.btn{
+  width: max-content;
+  height: max-content;
+  border-radius: 8px;
+}
+
 .dashboard {
   display: flex;
   gap: 16px;
@@ -36,3 +42,39 @@ body {
   border-radius: 4px;
   padding: 8px;
 }
+
+.popup{
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(146, 146, 146, 0.5);
+
+}
+
+.window{
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  min-width: 450px;
+  background-color: rgb(209, 209, 209);
+}
+
+.add-btn{
+
+}
+
+.close-btn{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.close-btn:target{
+
+}
+

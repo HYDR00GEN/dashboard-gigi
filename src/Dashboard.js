@@ -4,6 +4,7 @@ import { httpGetDashboards } from "./api.http";
 import Bucket from "./Bucket";
 import Card from "./Card";
 import { Form } from "./Form";
+import Popup from "./PopUp";
 
 class Dashboard extends React.Component {
   //   constructor(props) {
@@ -46,9 +47,11 @@ class Dashboard extends React.Component {
       console.log(dashboards);
       actualDashboards = dashboards.map((el) => {
         return (
+          <>
           <Bucket title={el.name} key={el.id}>
             {this.getMyContents(el)}
           </Bucket>
+          </>
         );
       });
     } else {
